@@ -1,0 +1,11 @@
+services:
+  exporter:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./.cache:/app/.cache
+      - ./data:/app/data
+      - ./output:/app/output
+    restart: "no"
+    stop_grace_period: 30s
